@@ -1,6 +1,6 @@
-# crud_flutter_bloc
+# CRUD with SQLite in BLoC State Management
 
-A new Flutter project.
+A simple app that proposes to create notes. The system uses SQLite as internal database and uses BLoC as state management
 
 ## Getting Started
 
