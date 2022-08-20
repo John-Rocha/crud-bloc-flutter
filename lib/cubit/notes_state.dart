@@ -42,7 +42,11 @@ class NotesLoaded extends NotesState {
 
 // falha ao carregar notas
 class NotesFailure extends NotesState {
-  const NotesFailure();
+  const NotesFailure({
+    required this.error,
+  });
+
+  final String error;
 
   @override
   List<Object> get props => [];

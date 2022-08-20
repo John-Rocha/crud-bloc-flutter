@@ -22,7 +22,7 @@ class NotesCubit extends Cubit<NotesState> {
       final notes = await _databaseProvider.getNotes();
       emit(NotesLoaded(notes: notes));
     } on Exception {
-      emit(const NotesFailure());
+      emit(const NotesFailure(error: 'Erro ao carregar notas'));
     }
   }
 
@@ -34,7 +34,7 @@ class NotesCubit extends Cubit<NotesState> {
       await _databaseProvider.deleteNote(id);
       getNotes();
     } on Exception {
-      emit(const NotesFailure());
+      emit(const NotesFailure(error: 'Erro ao deletar as notas'));
     }
   }
 
@@ -46,7 +46,7 @@ class NotesCubit extends Cubit<NotesState> {
       await _databaseProvider.deleteAllNotes();
       getNotes();
     } on Exception {
-      emit(const NotesFailure());
+      emit(const NotesFailure(error: 'Erro ao deletar as notas'));
     }
   }
 
@@ -66,7 +66,7 @@ class NotesCubit extends Cubit<NotesState> {
       emit(const NotesSuccess());
       // getNotes();
     } on Exception {
-      emit(const NotesFailure());
+      emit(const NotesFailure(error: 'Ocorreu um erro!'));
     }
   }
 }
