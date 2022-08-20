@@ -26,7 +26,7 @@ class DocumentosView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TODO List'),
+        title: const Text('Notes List'),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
