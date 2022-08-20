@@ -1,7 +1,6 @@
 import 'package:crud_flutter_bloc/models/note.dart';
-import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 
 class DatabaseProvider {
   static final DatabaseProvider instance = DatabaseProvider._init();
@@ -41,7 +40,6 @@ class DatabaseProvider {
   Future<List<Note>> getNotes() async {
     final db = await instance.db;
     final result = await db.rawQuery('select * from notes order by id');
-    debugPrint(result.toString());
 
     return result.map((json) => Note.fromJson(json)).toList();
   }
