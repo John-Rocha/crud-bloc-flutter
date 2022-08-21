@@ -47,7 +47,10 @@ class DocumentosView extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const NoteEditPage(note: null),
+              builder: (context) => const NoteEditPage(
+                note: null,
+                key: Key('NoteEditPage'),
+              ),
             ),
           );
         },
