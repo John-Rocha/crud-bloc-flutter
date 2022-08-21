@@ -62,6 +62,7 @@ class DocumentosView extends StatelessWidget {
     showDialog<String>(
       context: context,
       builder: (BuildContext context) => AlertDialog(
+        key: const Key('deleteAllNotes'),
         title: const Text('Excluir Todas as Notas'),
         content: const Text('Confirmar operação?'),
         actions: <Widget>[
